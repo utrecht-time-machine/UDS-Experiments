@@ -48,11 +48,11 @@ function getParams(url) {
 
 function createDot(point) { // type: {x: number, y: number}
   console.log('Creating highlight dot:', point);
-  let dot = document.createElement('div');
-  dot.style.left = point.x;
-  dot.style.top = point.y;
+  let dot = document.createElement('img');
+  dot.style.left = point.x + "px";
+  dot.style.top = point.y + "px";
   dot.style.position = 'absolute';
-  dot.innerHTML = '<img height="10" alt="Knipperbolletje" src="/UDS4/images/Knipperbolletje.gif" width="10" border="0">';
+  dot.src="/UDS4/images/Knipperbolletje.gif"
   document.body.appendChild(dot);
 };
 
