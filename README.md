@@ -21,7 +21,7 @@ Download [knipperendebolletjes.js](https://raw.githubusercontent.com/utrecht-tim
 Download [TrefwoordByObjectNr.asp](https://raw.githubusercontent.com/utrecht-time-machine/UDS-Experiments/master/scripts/TrefwoordByObjectNr.asp) en upload deze via FTP naar de map `/scripts`
 
 ## Stap 3 (eenmalig)
-Download [Knipper.asp](https://github.com/utrecht-time-machine/knipperendebolletjes/blob/master/scripts/Knipper.asp) en upload deze via FTP naar de map `/scripts`
+Download [Knipper.asp](https://raw.githubusercontent.com/utrecht-time-machine/knipperendebolletjes/master/scripts/Knipper.asp) en upload deze via FTP naar de map `/scripts`
 
 ## Stap 4
 Open het `....-links.htm` (dit bestand bevat de `<AREA>` elementen) om het te bewerken.
