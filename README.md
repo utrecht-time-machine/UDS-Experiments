@@ -1,7 +1,7 @@
 # Knipperendebolletjes
-door Rick, Ivar en Simon - Utrecht Time Machine
-30 maart, 17-18 april en 13 oktober 2020
-GNU General Public License v3.0
+- Door Rick, Ivar en Simon - Utrecht Time Machine
+- 30 maart, 17+18 april en 13 oktober 2020
+- Open-source licentie volgens GNU General Public License v3.0
 
 Een eenvoudige client-sided oplossing voor de 'knipperendebolletjes' op de zoekplaten op [documentatie.org](http://www.documentatie.org).
 Dit werkt als volgt: Het Javascript bestand kijkt of er in de querystring van het `.htm` bestand dat geopend wordt een `?objectnr=Ob123n` wordt vermeld. In dat geval loopt het script langs alle `<AREA>` elementen op de pagina. Wanneer er in de `HREF` van de `AREA` verwezen wordt naar dit objectnummer dan wordt het middelpunt van de polygoon uitgerekend en wordt er op die plek een knipperend bolletje getoond.
@@ -25,15 +25,17 @@ Open het `....-links.htm` (dit bestand bevat de `<AREA>` elementen) om het te be
 
 ## Stap 4
 Plaats de volgende regel code in de `<HEAD>` van het `.htm` bestand. 
-
-```<script type="text/javascript" src="/scripts/knipperendebolletjes.js"></script>```
+```
+<script type="text/javascript" src="/scripts/knipperendebolletjes.js"></script>
+```
 
 ![](doc/head.jpg)
 
 ## Stap 5
-
-
-
+Vervang de volledige inhoud van het bestand `...-Knipper.asp` door het volgende:
+```
+<!--#include virtual="/scripts/Knipper.asp"-->
+```
 
 ## Optioneel
 
@@ -43,4 +45,4 @@ In sommige gevallen wil je geen knipperend bolletje laten zien. Bijvoorbeeld als
 ![](doc/nodot.jpg)
 
 ### Verplaatsen bolletje t.o.v. van het midden 
-
+![](doc/xy.jpg)
