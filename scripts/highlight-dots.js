@@ -45,34 +45,40 @@ function getParams(url) {
 	return params;
 };
 
-
 function createDot(point) { // type: {x: number, y: number}
   console.log('Creating highlight dot:', point);
   let dot = document.createElement('img');
   dot.style.left = point.x + "px";
   dot.style.top = point.y + "px";
   dot.style.position = 'absolute';
+  dot.style.pointerEvents = 'none';
+
   dot.src="/UDS4/images/Knipperbolletje.gif"
   document.body.appendChild(dot);
 };
 
 document.addEventListener("DOMContentLoaded", function(e) {
   const queryObjNr = getParams(location.search).objectnr;
-  // console.log(queryObjNr.objectnr);
 
   const areas = document.getElementsByTagName("area");
   for(let i = 0; i < areas.length; i++) {
     const area = areas.item(i);
     const areaObjNr = getParams(area.href).Idnr;
-    const areaCoords = area.coords;
 
-    let areaPoints = coordsToPoints(areaCoords);
-    // console.log(areaPoints);
-    let areaCenter = get_polygon_centroid(areaPoints);
-    // console.log(areaCenter);
+    if (queryObjNr && queryObjNr === areaObjNr && !area.hasAttribute("data-nodot")) {
+      const areaCoords = area.coords;
+      let areaPoints = coordsToPoints(areaCoords);
+      let areaCenter = get_polygon_centroid(areaPoints);
+    
+      if (area.hasAttribute("data-x")) {
+        areaCenter.x += parseInt(area.getAttribute("data-x"))
+      }
 
-    if (queryObjNr && queryObjNr === areaObjNr) {
-        createDot(areaCenter);
+      if (area.hasAttribute("data-y")) {
+        areaCenter.y += parseInt(area.getAttribute("data-y"))
+      }
+
+      createDot(areaCenter);
     }
   }
 });
