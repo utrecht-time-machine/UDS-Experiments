@@ -52,7 +52,7 @@ function createDot(point) { // type: {x: number, y: number}
   dot.style.left = point.x;
   dot.style.top = point.y;
   dot.style.position = 'absolute';
-  dot.innerHTML = '<img height="10" alt="Knipperbolletje" src="../UDS4/images/Knipperbolletje.gif" width="10" border="0">';
+  dot.innerHTML = '<img height="10" alt="Knipperbolletje" src="/UDS4/images/Knipperbolletje.gif" width="10" border="0">';
   document.body.appendChild(dot);
 };
 
