@@ -1,7 +1,7 @@
 /*
 knipperendebolletjes.js
 by Rick, Ivar en Simon - Utrecht Time Machine
-March 30th, 2020
+30 maart, 17-18 april en 13 oktober 2020
 GNU General Public License v3.0
 */
 
