@@ -20,10 +20,13 @@ Download [knipperendebolletjes.js](https://raw.githubusercontent.com/utrecht-tim
 ## Stap 2 (eenmalig)
 Download [TrefwoordByObjectNr.asp](https://raw.githubusercontent.com/utrecht-time-machine/UDS-Experiments/master/scripts/TrefwoordByObjectNr.asp) en upload deze via FTP naar de map `/scripts`
 
-## Stap 3
-Open het `....-links.htm` (dit bestand bevat de `<AREA>` elementen) om het te bewerken.
+## Stap 3 (eenmalig)
+Download [Knipper.asp](https://github.com/utrecht-time-machine/knipperendebolletjes/blob/master/scripts/Knipper.asp) en upload deze via FTP naar de map `/scripts`
 
 ## Stap 4
+Open het `....-links.htm` (dit bestand bevat de `<AREA>` elementen) om het te bewerken.
+
+## Stap 5
 Plaats de volgende regel code in de `<HEAD>` van het `.htm` bestand. 
 ```
 <script type="text/javascript" src="/scripts/knipperendebolletjes.js"></script>
@@ -31,7 +34,7 @@ Plaats de volgende regel code in de `<HEAD>` van het `.htm` bestand.
 
 ![](doc/head.jpg)
 
-## Stap 5
+## Stap 6
 Vervang de volledige inhoud van het bestand `...-Knipper.asp` door het volgende:
 ```
 <!--#include virtual="/scripts/Knipper.asp"-->
