@@ -21,31 +21,45 @@ Download [knipperendebolletjes.js](https://raw.githubusercontent.com/utrecht-tim
 Download [TrefwoordByObjectNr.asp](https://raw.githubusercontent.com/utrecht-time-machine/UDS-Experiments/master/scripts/TrefwoordByObjectNr.asp) en upload deze via FTP naar de map `/scripts`
 
 ## Stap 3 (eenmalig)
-Download [Knipper.asp](https://raw.githubusercontent.com/utrecht-time-machine/knipperendebolletjes/master/scripts/Knipper.asp) en upload deze via FTP naar de map `/scripts`
+Download [iframe-opvragen-generiek.asp](https://raw.githubusercontent.com/utrecht-time-machine/knipperendebolletjes/master/scripts/iframe-opvragen-generiek.asp) en upload deze via FTP naar de map `/scripts`
 
 ## Stap 4
-Open het `....-links.htm` (dit bestand bevat de `<AREA>` elementen) om het te bewerken.
-
-## Stap 5
-Plaats de volgende regel code in de `<HEAD>` van het `.htm` bestand. 
+Open het `....-links.htm` (dit bestand bevat de `<AREA>` elementen) om het te bewerken en plaats de volgende regel code in de `<HEAD>` van het `.htm` bestand. 
 ```
 <script type="text/javascript" src="/scripts/knipperendebolletjes.js"></script>
 ```
 
 ![](doc/head.jpg)
 
-## Stap 6
+## Stap 5
 Vervang de volledige inhoud van het bestand `...-Knipper.asp` door het volgende:
 ```
-<!--#include virtual="/scripts/Knipper.asp"-->
+<!--#include virtual="/scripts/iframe-opvragen-generiek.asp"-->
 ```
+
+## Stap 6
+Vervang de volledige inhoud van het bestand `...-iframe-opvragen.asp` door het volgende:
+```
+<!--#include virtual="/scripts/iframe-opvragen-generiek.asp"-->
+```
+
+De map ziet er dan in FileZilla ongeveer als volgt uit:
+
+![](doc/map.jpg)
 
 ## Optioneel
 
 ### Eén bolletje voor meerdere AREA's
-In sommige gevallen wil je geen knipperend bolletje laten zien. Bijvoorbeeld als meerdere AREA's samen één groep vormen. Hiervoor kun je het `data-nodot` attribuut gebruiken.
+In sommige gevallen wil je geen knipperend bolletje laten zien. Bijvoorbeeld als meerdere AREA's samen één groep vormen. Hiervoor kun je het `data-nodot` attribuut gebruiken. Wanneer er meerdere AREA's die in aanmerking komen voor een bolletje wordt alleen eerste getoond, tenzij deze eerste een `data-nodot` heeft, dan slaat ie die over en komt het bolletje bij de volgende te staan.
 
 ![](doc/nodot.jpg)
 
+<img src="doc/nodot-1.jpg" width="45%">  <img src="doc/nodot-2.jpg" width="45%">
+
+
 ### Verplaatsen bolletje t.o.v. van het midden 
+Wanneer een bolletje niet precies op de goede plek staat kun je d.m.v. de attributen `data-x` en `data-y` het bolletje de nodige pixels naar links/rechts en/of boven/onder verplaatsen.
 ![](doc/xy.jpg)
+
+<img src="doc/xy-niet.jpg" width="45%">  <img src="doc/xy-wel.jpg" width="45%">
+
