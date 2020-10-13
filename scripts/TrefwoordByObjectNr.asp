@@ -1,6 +1,7 @@
 <%
-'usage: https://utds.eu/data/ZoekplaatDb/ZplaatHUA/scripts/TrefwoordByObjectNr.asp?objectnr=Ob6478n
+'normal usage: include this file using 'include virtual'
 
+' to test enable following 2 lines and call /scripts/TrefwoordByObjectNr.asp?objectnr=Ob6478n
 ' objectnr = Request.QueryString("objectnr")
 ' response.write(TrefwoordByObjectNr(objectnr))
 

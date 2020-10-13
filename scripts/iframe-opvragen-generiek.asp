@@ -1,13 +1,18 @@
-<!--#include virtual="/data/ZoekplaatDb/ZplaatHUA/scripts/TrefwoordByObjectNr.asp"-->
+<!--#include virtual="/scripts/TrefwoordByObjectNr.asp"-->
 <%
-objectnr = Request.QueryString("objectnr")
 volgnummer = Request.QueryString("volgnummer")
-trefwoord = TrefwoordByObjectNr(objectnr)
+objectnr = Request.QueryString("objectnr")
+trefwoord = Request.QueryString("Trefwoord") ' lees trefwoord indien meegegeven
+if objectnr<>"" then trefwoord = TrefwoordByObjectNr(objectnr) ' if objectnr dan vraag trefwoord op
+if trefwoord="" then response.end() ' nog steeds geen trefwoord? dan script afbreken
 
 url = Request.ServerVariables("SCRIPT_NAME")
 url = Replace(url, "-Knipper.asp", "-links.htm")
+url = Replace(url, "-iframe-opvragen.asp", "-links.htm")
 url = Replace(url, "Zoekplaat-", "Zplaat")
-url = url & "?objectnr=" & objectnr
+if objectnr<>"" then url = url & "?objectnr=" & objectnr
+
+
 %>
 
 <!DOCTYPE html>

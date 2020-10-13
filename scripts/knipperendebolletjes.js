@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
       }
 
       createDot(areaCenter);
+
+      break; // stop after having created one dot
     }
   }
 });

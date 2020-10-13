@@ -1,1 +1,1 @@
-<!--#include virtual="/data/ZoekplaatDb/ZplaatHUA/scripts/Knipper.asp"-->
+<!--#include virtual="/scripts/iframe-opvragen-generiek.asp"-->
