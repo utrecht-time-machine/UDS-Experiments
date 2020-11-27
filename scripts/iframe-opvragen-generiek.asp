@@ -8,6 +8,7 @@ if trefwoord="" then response.end() ' nog steeds geen trefwoord? dan script afbr
 
 url = Request.ServerVariables("SCRIPT_NAME")
 url = Replace(url, "-Knipper.asp", "-links.htm")
+url = Replace(url, "-knipper.asp", "-links.htm")  'todo: case insensitive replace
 url = Replace(url, "-iframe-opvragen.asp", "-links.htm")
 url = Replace(url, "Zoekplaat-", "Zplaat")
 if objectnr<>"" then url = url & "?objectnr=" & objectnr
